@@ -12,7 +12,6 @@ function computerPlay() {
 
 }
 function playRound(playerSelection, computerSelection) {
-    playerSelection=playerSelection.toLowerCase();
     const rock = 'rock'
     const paper = 'paper'
     const scissors = 'scissors'
@@ -40,18 +39,13 @@ function playRound(playerSelection, computerSelection) {
         playerWinCounter+=1;
         return "You Win! Scissors beats Paper";
     }
-    else if (playerSelection===computerSelection) {
+    else if (playerSelection==computerSelection) {
         return "It's a Draw!";
     }
 
   }
 
-  function game(numOfGames) {
-      for(let i = 1; i<(numOfGames+1); i++) {
-          const playerSelection = prompt('Round '+i+': What will you play?');
-          const computerSelection = computerPlay();
-          console.log(playRound(playerSelection, computerSelection));
-      }
+  function grandWinner() {
       if (playerWinCounter>computerWinCounter) {
           return 'You Are the WINNER!! Congratulations!!';
       }
@@ -64,5 +58,35 @@ function playRound(playerSelection, computerSelection) {
   }
   let playerWinCounter=0;
   let computerWinCounter=0;
-  console.log(game(5));
-  console.log('Final Score: '+playerWinCounter+' to '+computerWinCounter)
+  let gameCounter = 0;
+  const btns = document.querySelectorAll('.play');
+  const yourScore = document.querySelector('#yourScore');
+  const computerScore = document.querySelector('#computerScore');
+  const gameCount = document.querySelector("#gameCount");
+
+  btns.forEach((btn) => {
+    btn.addEventListener('click', function(e) {
+        const computerSelection = computerPlay();
+        playerSelection = e.target.textContent.toLowerCase();
+        gameCounter += 1
+        let result = playRound(playerSelection, computerSelection);
+        setTimeout(function() {alert('You played: '+playerSelection+'\n'
+        +'Computer played: '+computerSelection+'\n'+'\n'+result+'\n'+'\n'+'Games left: '+(5-gameCounter))}, 0.3);
+        gameCount.textContent = 5-gameCounter;
+        computerScore.textContent = computerWinCounter;
+        yourScore.textContent = playerWinCounter;
+        setTimeout(function() {
+            if(gameCounter==5) {
+            alert(grandWinner()+'\n'
+            +'Final Score: '+'You: '+playerWinCounter+'\n'
+            +'Computer: '+computerWinCounter);
+            gameCount.textContent = 5;
+            computerScore.textContent = 0;
+            yourScore.textContent = 0;
+            playerWinCounter=0;
+            computerWinCounter=0;
+            gameCounter = 0;
+            }
+        }, 0.4)
+    })
+  })

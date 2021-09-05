@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html lang='en'>
-    <body>
-        <h1>Rock Paper Scissors</h1>
-        <script src='app.js'></script>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Rock Paper Scissors</h1>
+  <div class="buttons">
+    <div class="play">
+      <span>Paper</span>
+    </div>
+    <div class="play">
+      <span>Scissors</span>
+    </div>
+    <div class="play">
+      <span>Rock</span>
+    </div>
+</div> 
+<div id='results'>
+      <div class='lines'>
+        <p>Games Left:</p>
+        <p type='number' id='gameCount'>5</p>
+      </div>
+      <div class='lines'>
+        <p>Your Score:</p>
+        <p id='yourScore'>0</p>
+      </div>  
+      <div class='lines'>
+        <p>Computer Score:</p>
+        <p id='computerScore'>0</p>
+      </div>    
+  </div> 
+<script src='app.js'></script>
+  </div>
 
 </html>
