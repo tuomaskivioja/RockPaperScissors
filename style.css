@@ -1,0 +1,81 @@
+  html {
+    font-size: 10px;
+    background: url('./rock-paper-scissor.jpg') bottom center;
+    background-size: 100%;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    font-size: 7rem;
+    color: white;
+    opacity: 95%;
+    text-shadow: 0 0 2rem black;
+
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #results {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+    border: .4rem solid black;
+    border-radius: .5rem;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+
+    margin: 5rem;
+  }
+
+  .lines {
+    font-size: 1.8rem;
+    transition: all .07s ease;
+    width: 20rem;
+    text-align: center;
+    color: white;
+  }
+  .play {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    margin: 5rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 20rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+  }
+  .play:hover {
+    transform: scale(1.3);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+    cursor: pointer;
+  }
+  span {
+    display: block;
+    font-size: 4rem;
+  }
+ 
